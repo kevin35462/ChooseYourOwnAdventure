@@ -6,41 +6,68 @@ var game = {
     levels: {
 
         start: {
-            message: "You come across a dark cave",
+            message: "Your in the woods. <br> You come across an abandoned house",
             choices: [
                 {
-                    text: "Enter the cave",
-                    nextLevel: "cave",
+                    text: "You approach it",
+                    nextLevel: "Abandoned_House",
                 },
 
                 {
-                    text: "Keep on moving",
-                    nextLevel: "field",
+                    text: "You leave it alone",
+                    nextLevel: "home",
                 },
             ]
         },
 
-        cave: {
+        Abandoned_House: {
             background_image: "fire.gif",
             music: "Final-Fantasy-7-Boss-Battle.mp3",
-            message: "You come across a fire monster or something!",
+            message: "You hear a noise inside",
+            choices: [
+                {
+                    text: "You wait it out",
+                    nextLevel: ""
+                }, {
+                    text: "You investigate",
+                    nextLevel: "Investigate"
+                }
+            ]
+        },
+
+        home: {
+            message: "You go home. <br> The end",
             choices: [
                 {
                     text: "Start over",
                     nextLevel: "start",
-                },
+                }, 
             ]
+        
         },
-
-        field: {
-            message: "Some adventurer you are...",
+        Investigate: {
+            message: "You see a man run towards you",
             choices: [
                 {
-                    text: "Start over",
-                    nextLevel: "start",
+                    text:"Grab rock near you",
+                    nextLevel:"Rock"
+                }, {
+                    text: "Grab plank of wood",
+                    nextLevel: "Wood",
                 },
+                
             ]
-        },
+        
+        }, 
+        Rock: {
+            message: "You throw the rock. <br> The man dodges it. You get tackled and killed ",
+            choices: [
+                {
+                    text:"Start Over",
+                    nextLevel:"start"
+                },
+                
+            ]        
+    
 
-    }
 };

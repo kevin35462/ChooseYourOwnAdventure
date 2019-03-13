@@ -16,7 +16,7 @@ $(document).ready(function() {
 });
 
 function renderLevel(level) {
-    $("#prompt").text(level.message);
+    $("#prompt").html(level.message);
     $("#choices").empty();
 
     var choices = level.choices;
